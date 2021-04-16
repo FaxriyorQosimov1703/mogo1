@@ -1,0 +1,469 @@
+@media screen and (max-width: 576px) {
+    .container {
+        max-width: 96%;
+        margin: 0 auto;
+    }
+    
+    body {
+        font-family: Noto Sans JP, sans-serif;
+    } 
+
+    @mixin flex() {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+// --------------------------menu qismi-----------------------------------
+    .wrapper {
+       .container {
+           @include flex();
+           .openMenu {
+                display: block;
+                cursor: pointer;
+                color: #fff;
+            }
+               .navbar {
+                   @include flex();
+                   .logo {
+                       font-size: 20px;
+                       padding-right: 20px;
+                   }
+                   .nav {
+                       display: none;
+                       position: fixed;
+                       background-color: #171819;
+                       z-index: -1;
+                       padding-top: 90px;
+                       width: 100%;
+                       margin-right: 30px;
+                       flex-direction: column;
+                       text-align: center;
+                       transition: all 1s ease;
+                       .closeMenu {
+                           display: block;
+                           color: #fff;
+                           position: absolute;
+                           top: 60px;
+                           left: 13px;
+                           cursor: pointer;
+                       }
+
+                       li { 
+                           padding-bottom: 10px;
+                           a {
+                               &::after {
+                                   content: '';
+                                   position: absolute;
+                                   width: 0%;
+                                   height: 2px;
+                                   background-color: #F12A17;
+                                   left: 0px;
+                                   bottom: 0px;
+                                   transition: .6s;
+                               }
+                               &:hover {
+                                   color: #F12A17;
+                               }
+                           }             
+                       }            
+                   }
+               }
+       }
+    }
+// --------------------------urtadagi bola qiz ---------------------------
+    .wrapper-item {     
+        .wrapper-body {
+            height: 100vh;
+            .wrapper-body-text {
+                h1 {
+                    font-size: 30px;
+                }
+                .text-item {
+                    a {
+                        display: block;
+                   
+                    }
+                    .btn {
+                        padding: 10px 70px;
+                        margin-top: 15px;
+                        margin-right: 15px;
+                    }
+                }
+            }
+        }
+        .wrapper-footer {
+            height: auto;
+            .container {
+                flex-direction: column;
+                span {
+                    display: none;
+                }
+                .wrapper-footer-a {
+                    width: 100%;
+                    padding: 0 10px;
+                    h2 {
+                        font-size: 35px;
+                      padding-top: 20px;
+
+                    }
+                    h4 {
+                        font-size: 20px;
+                    }
+                    button {
+                        padding: 15px 0;
+                        margin: 10px auto;
+    
+                    }
+                }
+                .wrapper-footer-b {
+                    padding: 0 10px;
+                    width: 100%;
+                    padding-bottom: 50px;
+                    h2 {
+                        font-size: 35px;
+                    }
+                    .week {
+                        padding-top: 30px;
+                    }
+                    .oclock {
+                        padding-top: 5px;
+                        color: #5D5959;
+                        font-weight: 100;
+                    }
+                }
+            }
+        }
+    }
+// -----------------------------ikkita sportchi qiz----------------------
+    .about {
+        .container {
+            .about-us {
+                flex-direction: column;
+                width: 100%;
+                padding: 0;
+                .about-us-a {
+                    padding: 0 10px;
+                    h1 {
+                        font-size: 25px;
+                        padding-top: 20px;
+                    }
+                }
+                .about-us-b {
+                    flex-direction: column;
+                    .about-us-b-card1  {
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+        }
+    }
+// ---------------------------classes mashgulot narxlari-----------------
+    .classes {
+        height: auto;
+        .container {
+            .classes-body {
+                flex-direction: column;
+                padding: 0 10px;
+                .classes-box {
+                    width: 100%;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+// ---------------------------split hover------------------------------
+    .split {
+        height: auto;
+        padding-bottom: 30px;
+        padding: 0;
+        .container {
+            flex-direction: column;
+            .split-a {
+                margin-top: 20px;
+            }
+        }
+    }
+// --------------------------Mashgulotlar jadvali-----------------------
+    .jadval {
+        height: auto;
+         position: sticky;
+         left: 0;
+        width: 100%;
+        padding: 20px;
+
+        .container {
+           
+            .table {
+               display: block;
+               overflow-x: auto;
+               margin-bottom: 30px;
+            }
+        }
+    }
+// --------------------------Foooter qismi----------------------------
+    .footer {
+        height: auto;
+        .container {
+            flex-direction: column;
+            padding: 0 calc(100% - 97%);
+            .forma {
+                h1 {
+                    font-size: 25px;
+                }
+                .form {
+                    input, textarea, button {
+                        width: 100%;
+                        padding: 3px;
+                    }
+                }
+            }
+            .ftr {
+                flex-direction: column;
+                .ftr-child {
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 920px) {
+    .container {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+    
+    @mixin flex() {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+// --------------------------menu qismi-----------------------------------
+    .wrapper {
+   
+       .container {
+           @include flex();
+           .openMenu {
+                display: block;
+                cursor: pointer;
+                color: #fff;
+            }
+               .navbar {
+                   @include flex();
+                   .logo {
+                       font-size: 30px;
+            
+                       padding-right: 20px;
+ 
+                   }
+                   .nav {
+                       display: none;
+                       position: fixed;
+                       background-color: #171819;
+                       z-index: -1;
+                       padding-top: 90px;
+                       width: 100%;
+                       margin-right: 25px;
+                       flex-direction: column;
+                       text-align: center;
+                       transition: all 1s ease;
+                       .closeMenu {
+                           display: block;
+                           color: #fff;
+                           position: absolute;
+                           top: 60px;
+                           left: 13px;
+                           cursor: pointer;
+                       }
+
+                       li { 
+                           padding-bottom: 10px;
+                           a {
+                               &::after {
+                                   content: '';
+                                   position: absolute;
+                                   width: 0%;
+                                   height: 2px;
+                                   background-color: #F12A17;
+                                   left: 0px;
+                                   bottom: 0px;
+                                   transition: .6s;
+                               }
+                               &:hover {
+                                   color: #F12A17;
+     
+                               }
+                           }             
+                       }            
+                   }
+ 
+               }
+ 
+       }
+    }
+// --------------------------urtadagi bola qiz ---------------------------
+    .wrapper-item {
+        .wrapper-footer {
+            height: auto;
+            .container {
+                flex-direction: column;
+                span {
+                    display: none;
+                }
+                .wrapper-footer-a {
+                    width: 100%;
+                    padding: 0 30px;
+                    h2 {
+                        font-size: 35px;
+                      padding-top: 20px;
+
+                    }
+                    h4 {
+                        font-size: 20px;
+                    }
+                    button {
+                        padding: 15px 0;
+                        margin: 10px auto;
+    
+                    }
+                }
+                .wrapper-footer-b {
+                    padding: 0 30px;
+                    width: 100%;
+                    padding-bottom: 50px;
+                    h2 {
+                        font-size: 35px;
+                    }
+                    .week {
+                        padding-top: 30px;
+                    }
+                    .oclock {
+                        padding-top: 5px;
+                        color: #5D5959;
+                        font-weight: 100;
+                    }
+                }
+            }
+        }
+    }
+// -----------------------------ikkita sportchi qiz----------------------
+    .about {
+        .container {
+            .about-us {
+                flex-direction: column;
+                width: 100%;
+                padding: 20px;
+                .about-us-a {
+                    padding: 0 10px;
+                    h1 {
+                        font-size: 35px;
+                        padding-top: 20px;
+                    }
+                }
+                .about-us-b {
+                    flex-direction: column;
+                    .about-us-b-card1  {
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+        }
+    }
+// ---------------------------classes mashgulot narxlari-----------------
+    .classes {
+        height: auto;
+        .container {
+            height: auto;
+            .classes-body {
+                flex-direction: column;
+                padding: 0 10px;
+                .classes-box {
+                    width: 100%;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+// -----------------------------split hover -----------------------
+.split {
+    height: auto;
+    padding-bottom: 30px;
+    .container {
+        flex-wrap: wrap;
+        .split-a {
+            margin-top: 25px;
+        }
+    }
+}
+// -----------------------------table qismi ---------------------------
+.jadval {
+    height: auto;
+     position: sticky;
+     left: 0;
+    width: 100%;
+    padding: 20px;
+
+    .container {
+       
+        .table {
+           display: block;
+           overflow-y: auto;
+           margin-bottom: 30px;
+        }
+    }
+}
+// --------------------------Foooter qismi----------------------------
+.footer {
+    height: auto;
+    .container {
+        flex-direction: column;
+        padding: 0 calc(100% - 94%);
+        .forma {
+            h1 {
+                font-size: 25px;
+            }
+            .form {
+                input, textarea, button {
+                    width: 100%;
+                    padding: 3px;
+                }
+            }
+        }
+        .ftr {
+            flex-direction: column;
+        }
+    }
+}
+}
+
+@media screen and (min-width: 920px) and (max-width: 1200px) {
+    .wrapper {
+        .container {
+            width: 85%;
+            .navbar {
+                .logo {
+                font-size: 25px;
+                }
+                .nav {
+                    li {
+                        a {
+                            padding: 12px 10px;
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }
+    .split {
+        height: auto;
+        padding-bottom: 30px;
+        .container {
+            flex-wrap: wrap;
+            .split-a {
+                margin-top: 25px;
+            }
+        }
+    }
+
+}

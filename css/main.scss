@@ -1,0 +1,651 @@
+*, *::after, *::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    // img {
+    //     width: 100%;
+    // }
+   
+}
+
+body {
+    font-family: Noto Sans JP, sans-serif;
+}
+
+li {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+}
+
+@mixin flex() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+// --------------------------------------------bosh meular qismi---------------------------------------------------------
+.wrapper {
+    width: 100%;
+    background-color: #171819;
+    position: fixed;
+    z-index: 10;
+    // .toggler {
+    //     display: none;
+    // }
+    // .menu {
+    //     color: #fff;
+    //     display: none;
+    // }
+    .openMenu {
+        display: none;
+    }
+        .navbar {
+            width: 100%;
+            height: 60px;
+
+            @include flex();
+            justify-content: space-between;
+            .logo {
+                font-size: 30px;
+                font-weight: 900;
+                padding-bottom: 6px;
+                color: #fff;
+                font-family: Noto Sans JP, sans-serif;
+                cursor: pointer;
+                transition: .5s;
+
+                &:hover {
+                    color: #F12A17;
+                }
+            }
+            .nav {
+                .closeMenu {
+                    display: none;
+                }
+                li { 
+                    
+                    a {
+
+                        color: #fff;
+                        padding: 12px 26px;
+                        font-family: Noto Sans JP, sans-serif;
+                        height: 100%;
+                        cursor: pointer;
+                        position: relative;
+                        transition: .5s;
+    
+
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            width: 0%;
+                            height: 2px;
+                            background-color: #F12A17;
+                            left: 0px;
+                            bottom: 0px;
+                            transition: .6s;
+                        }
+                        &:hover {
+                            color: #F12A17;
+                            &::after {
+                                width: 100%;
+                            }
+                        }
+                    }             
+                }            
+            }
+            .icon {
+                @include flex();
+                justify-content: space-around;
+                width: 150px;
+                height: 100%;
+                li {
+                    height: 100%;
+                    width: 100%;
+                    @include flex();
+                    position: relative;
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        width: 0%;
+                        height: 0%;
+                        // border-radius: 50%;
+                        z-index: -1;
+                        transform: scale(0);
+                        transition: 0.6s;
+                        background-color: #000;
+                    }
+                   &:hover {
+                       &::after {
+                           width: 100%;
+                           height: 100%;
+                        //    border-radius: 0%;
+                            cursor: pointer;
+                           transform: scale(1);
+                            background-color: #000;
+                       }
+                       a {
+                        color: #F12A17;
+                       }
+                   }
+                    a {
+                        @include flex();
+                        color:#fff;
+                        transition: .5s;
+                    }
+                }
+
+            }
+        }
+            ul {
+                @include flex();
+            }
+}
+
+
+// ---------------------------------------------------------o'rtadagi yigit bilan qizni qo'l ushlasib turgani------------------------------
+.wrapper-item {
+    .wrapper-body {
+        width: 100%;
+        @include flex();
+        text-align: center;
+        height: 100vh;
+        background: url('/images/hero-bg.jpg') no-repeat center;
+        background-size: cover;
+        position: relative;
+        z-index: 0;
+        &::after {
+            content: '';
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: rgba(0, 0, 0, .8);
+            z-index: -1;
+        }
+        .wrapper-body-text {
+            z-index: 1;
+            h3 {
+                font-family: sans-serif;
+                color: #909090;
+                font-size: 25px;
+                font-weight: 100;
+                
+            }
+            h1 {
+                color: #fff;
+                font-family: sans-serif;
+                margin: 30px 0px;
+                font-size: 50px;
+                text-shadow: 2px 0px 2px #fff, 2px 0px 2px #fff;
+            }
+            .text-item {
+                a {
+                    color: #fff;
+                    font-family: sans-serif;
+                    transition: 0.5s;
+                    &:hover {
+                        color: #F12A17;
+                    }
+                }
+                .btn {
+                    background-color: transparent;
+                    border-radius: 3px;
+                    border-color: #F12A17;
+                    padding: 15px 20px;
+                    margin-left: 20px;
+                    a {
+                        color: #F12A17;
+                    }
+                    &:hover {
+                        background-color: #fff;
+                        border: #fff;
+                        
+                    }
+                }
+            }
+            
+        }
+    }
+    .wrapper-footer {
+        width: 100%;
+        height: 450px;
+        background-color: #171819;
+        font-family: sans-serif;
+        color: #fff;
+        .container {
+            width: 100%;
+            height: 100%;
+            @include flex();
+            span {
+                width: 1px;
+                height: 250px;
+                background-color: #212529;
+                margin: 0 50px;
+            }
+            .wrapper-footer-a {
+                // width: 40%;
+                h2 {
+                    font-size: 40px;
+                }
+                h4 {
+                    font-size: 25px;
+                    font-weight: 300;
+                    padding: 30px 0;
+                }
+                p {
+                    font-size: 18px;
+                    color: #5D5959;
+                    padding-bottom: 30px;
+                    a {
+                        color: #404040;
+                        transition: .5s;
+                        &:hover {
+                            color: #F12A17;
+                        }
+                    }
+                }
+                button {
+                    width: 100%;
+                    padding: 15px 0;
+                    background-color: #F12A17;
+                    border: none;
+                    a {
+                        color: #fff;
+                        font-weight: 600;
+                        letter-spacing: 1px;
+                    }
+                    &:hover {
+                        background-color: #fff;
+                        a {
+                            color: #F12A17;
+                        }
+                    }
+                }
+            }
+            .wrapper-footer-b {
+                h2 {
+                    font-size: 40px;
+                }
+                .week {
+                    padding-top: 30px;
+                }
+                .oclock {
+                    padding-top: 5px;
+                    color: #5D5959;
+                    font-weight: 100;
+                }
+            }
+        }
+    }
+}
+// ----------------------------------------------------------about qismidagi rasm---------------------------------------------------------
+img {
+    width: 100%;
+    // height: 200px;
+}
+// ------------------------------------------------------------about qismi--------------------------------------------------------------
+.about {
+    width: 100%;
+    height: 80%;
+    background-color: #f9f9f9;
+    .about-us {
+        @include flex();
+        padding: 0 30px;
+        .about-us-a {
+            h1 {
+                font-size: 35px;
+                color: #212529;
+                padding-bottom: 30px;
+            }
+            p {
+                color: #626262;
+                font-size: 18px;
+                a {
+                    color: #404040;
+                    transition: 0.3s;
+                    &:hover {
+                        color: #F12A17;
+                    }
+                }
+            }
+        }
+        .about-us-b {
+            height: 100%;
+            @include flex();
+            padding: 60px 0;
+            .about-us-b-card1 {
+                margin: 0px 10px;
+                background-color: #fff;
+                box-shadow: 5px 5px 15px  rgba(0,0,0, .1), -5px -5px 15px  rgba(0,0,0, .1);
+                .item-1, .item-2 {
+                    @include flex();
+                    justify-content: space-around;
+                    
+                }
+                .item-1 {
+                    padding-top: 20px;
+                    h2 {
+                        font-weight: 900;
+                    }
+                    a:hover {   
+                        color:#F12A17;
+                    }
+                }
+                .item-2 {
+                    padding-bottom: 20px;
+                    h4 {
+                        font-weight: 300;
+                        color: #5e5e5e;
+                        padding-top: 8px;
+
+                    }
+                    a:hover {   
+                        color:#F12A17;
+                    }
+                }
+
+            }
+        }
+    }
+
+
+}
+
+// -----------------------------------------------------------Classes qismi--------------------------------------------------------
+
+.classes-header {
+    text-align: center;
+    h3 {
+        padding-top: 50px;
+        padding-bottom: 5px;
+        color: #626262;
+        font-size: 20px;
+        font-weight: 500;
+    }
+    h1 {
+        font-weight: 900;
+        font-size: 30px;
+        padding-bottom: 50px;
+    }
+}
+.classes {
+    width: 100%;
+    height: auto;
+    padding-bottom: 30px;
+    .container{
+        .classes-body {
+              @include flex();
+              justify-content: space-around;
+              .classes-box {
+                box-shadow: 5px 5px 15px  rgba(0,0,0, .1), -5px -5px 15px  rgba(0,0,0, .1);
+                  width: 31%;
+                  .classes-box-child {
+                      padding: 20px 20px;
+                      @include flex();
+                      justify-content: space-between;
+                      .classes-box-child-left {
+                          h1 {
+                              padding-bottom: 5px;
+                              font-weight: 900;
+                             color: #212529;
+                          }
+                          h4 {
+                             span {
+                                  font-weight: 800;
+                                  color: #909090;
+                              }
+                          }
+                      }
+                      .classes-box-child-right {
+                          span {
+                            //   width: 60px;
+                            //   height: 60px;
+                            padding: 15px 10px;
+                              border-radius: 50%;
+                              background-color: #F13A11;
+                              color: #fff;
+                          }
+                      }
+                  }
+                  p {
+                      padding: 0 23px;
+                      font-size: 18px;
+                      color: #404040;
+                      padding-bottom: 20px;
+                  }
+              }
+        }
+      
+    }
+}
+
+// ---------------------------------------------------------split hover -----------------------------------------------------
+
+.split {
+    width: 100%;
+    height: auto;
+    background-color: #ccc;
+    .container {
+        @include flex();
+        justify-content: space-around;
+        
+        .split-a {
+            width: 380px;
+            height: 400px;
+            position: relative;
+            background-color: #212529;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            
+            color: #fff;
+            text-align: center;
+            .split-box {
+                position: absolute;
+                top: 30%;
+                padding: 20px;
+                h2 {
+                    padding-bottom: 20px;
+                }
+            }
+            .figure {
+                width: 100%;
+                height: 100%;
+                &::after {
+                    content: '';
+                    background: url('../images/class/cardio-class.jpg');
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 50%;
+                    height: 100%;
+                    background-position: 539px;
+                    background-size: cover;
+                    transform-origin: bottom;
+                    transition: all 0.5s ease;
+                }
+                &::before {
+                    content: '';
+                    background: url('../images/class/cardio-class.jpg');
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 50%;
+                    height: 100%;
+                    background-position: 350px;
+                    background-size: cover;
+                    transform-origin: top;
+                    transition: all .5s ease;
+                }
+            }
+            &:hover {
+                .figure {
+                    &::after {
+                        transform: rotateX(90deg);
+                    }
+                    &::before {
+                        transform: rotateX(90deg);
+                    }
+                }
+                
+            }
+        }
+    }
+}
+
+// ------------------------------------------------------Mashg'ulot jadvali-----------------------------------------------------
+
+
+.bg-orange {
+    background-color: #F13A11;
+}
+.jadval {
+    width: 100%;
+    text-align: center;
+    background-color: #171819;
+    height: auto;
+    padding-bottom: 25px;
+    .container {
+        .table {
+            border-collapse: collapse;
+            width: 100%;
+            tr {
+                td, th {
+                    border: 1px solid #212529;
+                    text-align: center;
+                    padding: 12px 10px;
+                    color: #fff;
+                    .h4 {
+                        color: #5e5e5e;
+                        padding-top: 4px;
+                    }
+                    .bg-orange {
+                        color: #fff;
+                    }
+                }
+                td {
+                    &:hover {
+                        background-color: #131313;
+                    }
+
+                }
+                th {
+                    padding: 25px;
+                }
+            }
+        }
+    }
+}
+
+// ----------------------------------------------------------- Footer qismi -----------------------------------------
+
+.footer {
+    width: 100%;
+    height: auto;
+    .container {
+        @include flex();
+        padding: 0 60px;
+        .forma {
+             
+            h1 {
+                padding: 100px 0 30px 0;
+                font-size: 35px;
+                font-weight: 800;
+            }
+            .form {
+                input, textarea, button {
+                    width: 80%;
+                    padding: 20px;
+                    margin-bottom: 15px;
+                    font-size: 18px;
+                    border: 1px/2 solid #7e7c7c;
+                }
+                button {
+                    background-color: #171819;
+                    color: #fff;
+                    font-size: 25px;
+                    transition: .5s;
+                    border: none;
+                    &:hover {
+                        background-color: #F12A17;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        .location {
+            h1 {
+                padding-top: 100px;
+                font-size: 28px;
+                font-weight: 800;
+                letter-spacing: -3px;
+            }
+            h4 {
+                padding: 40px 0;
+                font-size: 20px;
+                color: #ccc;
+            }
+            hr {
+                border: none;
+                background-color: #d6d5d5;
+                height: 1px;
+            }
+        }
+        .ftr {
+            @include flex();
+            h4 {
+                padding: 30px 60px;
+                color:#626262;
+            }
+            .ftr-child {
+                @include flex();   
+                h4 {
+                    a {
+                        color:#626262;  
+                    }
+                    .fab {
+                        color: #F12A17;
+                    }
+                }   
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .ax {    
+//     color: #F12A17;
+// }
